@@ -48,4 +48,4 @@ urllib3==2.5.0
 watchdog==6.0.0
 Django>=3.2,<5.0
 whitenoise
-torch==2.0.1
+torch
