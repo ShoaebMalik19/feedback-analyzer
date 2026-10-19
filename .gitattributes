@@ -1,0 +1,2 @@
+# Collected Django static files are build output; keep them out of language stats
+staticfiles/** linguist-generated=true

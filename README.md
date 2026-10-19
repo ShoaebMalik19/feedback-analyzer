@@ -61,6 +61,7 @@ python -m venv venv
 # Windows: venv\Scripts\activate   |   macOS / Linux: source venv/bin/activate
 pip install -r requirements.txt
 
+cp .env.example .env               # then set DJANGO_SECRET_KEY (and DJANGO_DEBUG=True for local dev)
 python manage.py migrate
 python manage.py createsuperuser   # optional, for /admin
 python manage.py runserver
@@ -68,11 +69,10 @@ python manage.py runserver
 
 Open `http://127.0.0.1:8000`. The first run downloads the default sentiment model from Hugging Face.
 
-> `DEBUG` is set to `False` in `settings.py`. For local development, set it to `True` or run `python manage.py collectstatic` so static files are served.
+> Configuration comes from environment variables (or `.env`): `DJANGO_SECRET_KEY`, `DJANGO_DEBUG` (default `False`) and `DJANGO_ALLOWED_HOSTS` (comma-separated, default `*`). Set `DJANGO_DEBUG=True` locally, or run `python manage.py collectstatic`, so static files are served.
 
 ## 🛣️ Roadmap
 
-- Load `SECRET_KEY` and `DEBUG` from environment variables
 - Add a history and analytics view of collected feedback
 
 ## 👤 Author
